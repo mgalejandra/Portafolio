@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import leaf from "../../Assets/Projects/leaf.png";
-import emotion from "../../Assets/Projects/emotion.png";
-import editor from "../../Assets/Projects/codeEditor.png";
-import chatify from "../../Assets/Projects/chatify.png";
-import suicide from "../../Assets/Projects/suicide.png";
-import bitsOfCode from "../../Assets/Projects/blog.png";
+import amacrux from "../../Assets/Projects/amacrux.png";
+import huawei from "../../Assets/Projects/huawei.png";
+import exchange from "../../Assets/Projects/exchange.png";
+import amberes from "../../Assets/Projects/amberes.png";
+import nomina from "../../Assets/Projects/nomina.png";
+
 
 function Projects() {
   return (
@@ -23,67 +23,56 @@ function Projects() {
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={chatify}
+              imgPath={exchange}
               isBlog={false}
-              title="Chatify"
-              description="Personal Chat Room or Workspace to share resources and hangout with friends build with react.js, Material-UI, and Firebase. Have features which allows user for realtime messaging, image sharing as well as supports reactions on messages."
-              ghLink="https://github.com/soumyajit4419/Chatify"
-              demoLink="https://chatify-49.web.app/"
+              title="Exchange"
+              description="It is an exchange adapted to the needs of Venezuela, where calculations are performed based on order types. The system includes logic for privilege assignment and audits, built with Angular version 19, using Material-UI for the frontend, and Node.js for the backend."
+              ghLink="https://github.com/mgalejandra/FBOJ"
+              demoLink="https://jmw-bo.netlify.app/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={bitsOfCode}
+              imgPath={nomina}
               isBlog={false}
-              title="Bits-0f-C0de"
-              description="My personal blog page build with Next.js and Tailwind Css which takes the content from makdown files and renders it using Next.js. Supports dark mode and easy to write blogs using markdown."
-              ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
-              demoLink="https://blogs.soumya-jit.tech/"
+              title="Payroll system"
+              description="Payroll migration project from Oracle Forms to Angular version 17 with NG Prime for the frontend. The backend was developed using Java Spring Boot, and PostgreSQL was used as the database. Scrum methodology was implemented with Jira for project planning, and continuous deployment was managed through Jenkins."
+              //ghLink="https://github.com/soumyajit4419/Bits-0f-C0de"
+              demoLink="https://www.infocent-latam.com/"
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={editor}
+              imgPath={huawei}
               isBlog={false}
-              title="Editor.io"
-              description="Online code and markdown editor build with react.js. Online Editor which supports html, css, and js code with instant view of website. Online markdown editor for building README file which supports GFM, Custom Html tags with toolbar and instant preview.Both the editor supports auto save of work using Local Storage"
-              ghLink="https://github.com/soumyajit4419/Editor.io"
-              demoLink="https://editor.soumya-jit.tech/"              
+              title="Oracle Database Analyst"
+              description="worked with an outsourcing company for Telefónica Venezuela as an Oracle Database Analyst"
+              //ghLink="https://github.com/soumyajit4419/Editor.io"
+              demoLink="https://e.huawei.com/es/"              
             />
           </Col>
 
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={leaf}
-              isBlog={false}
-              title="Plant AI"
-              description="Used the plant disease dataset from Kaggle and trained a image classifer model using 'PyTorch' framework using CNN and Transfer Learning with 38 classes of various plant leaves. The model was successfully able to detect diseased and healthy leaves of 14 unique plants. I was able to achieve an accuracy of 98% by using Resnet34 pretrained model."
-              ghLink="https://github.com/soumyajit4419/Plant_AI"
-              demoLink="https://plant49-ai.herokuapp.com/"
-            />
-          </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={suicide}
+              imgPath={amberes}
               isBlog={false}
-              title="Ai For Social Good"
-              description="Using 'Natural Launguage Processing' for the detection of suicide-related posts and user's suicide ideation in cyberspace  and thus helping in sucide prevention."
-              ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
+              title="Exchange venezuela"
+              description="Exchange in Venezuela that allows swapping Bolivars for Bitcoin or Petros. It was developed using React with Bootstrap for the frontend, and Node.js with a database in Redis, Blockchain, and PostgreSQL for the backend. The deployment was done using Docker."
+              //ghLink="https://github.com/soumyajit4419/AI_For_Social_Good"
               // demoLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" <--------Please include a demo link here
             />
           </Col>
 
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={emotion}
+              imgPath={amacrux}
               isBlog={false}
-              title="Face Recognition and Emotion Detection"
-              description="Trained a CNN classifier using 'FER-2013 dataset' with Keras and tensorflow backened. The classifier sucessfully predicted the various types of emotions of human. And the highest accuracy obtained with the model was 60.1%.
-              Then used Open-CV to detect the face in an image and then pass the face to the classifer to predict the emotion of a person."
-              ghLink="https://github.com/soumyajit4419/Face_And_Emotion_Detection"
+              title="Swap"
+              description="Cryptocurrency swap platform. The frontend was developed using React and Material-UI, while the backend was built with Node.js, utilizing Binance APIs. Additionally, Solidity was used to create a custom token."
+              ghLink="https://github.com/Amacruxcompany/Amacrux-LandingPage"
               // demoLink="https://blogs.soumya-jit.tech/"      <--------Please include a demo link here 
             />
           </Col>
