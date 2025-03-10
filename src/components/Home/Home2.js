@@ -53,10 +53,15 @@ function Home2() {
             </p>
           </Col>
           <Col md={4} className="myAvtar">
-            <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
-            </Tilt>
-          </Col>
+         <Tilt>
+          <img
+        src={myImg}
+        alt="avatar"
+        style={{ width: '400px', height: 'auto' }} // Ajusta los valores según necesites
+         className="img-fluid" 
+        />
+       </Tilt>
+       </Col>
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
