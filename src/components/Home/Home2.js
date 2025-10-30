@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
+import { useLanguage } from "../../context/LanguageContext";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -10,46 +11,23 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
+  const { t } = useLanguage();
   return (
     <Container fluid className="home-about-section" id="about">
       <Container>
         <Row>
           <Col md={8} className="home-about-description">
             <h1 style={{ fontSize: "2.6em" }}>
-              LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              {t.home2.titleStart} <span className="purple">{t.home2.titlePurple}</span> {t.home2.titleEnd}
             </h1>
             <p className="home-about-body">
-              I fell in love with programming and I have at least learnt
-              something, I think… 🫣
+              {t.home2.p1}
               <br />
-              <br />I am fluent in classics like
-              <i>
-                <b className="purple"> C++, Javascript. </b>
-              </i>
+              <br />{t.home2.p2}
               <br />
+              <br />{t.home2.p3}
               <br />
-              My field of Interest's are building new &nbsp;
-              <i>
-                <b className="purple">Web Technologies and Products </b> and
-                also in areas related to{" "}
-                <b className="purple">
-                  Blockchain.
-                </b>
-              </i>
-              <br />
-              <br />
-              Whenever possible, I also apply my passion for developing products
-              with <b className="purple">Node.js</b> and
-              <i>
-                <b className="purple">
-                  {" "}
-                  Modern Javascript Library and Frameworks
-                </b>
-              </i>
-              &nbsp; like
-              <i>
-                <b className="purple"> React.js and Next.js</b>
-              </i>
+              <br />{t.home2.p4}
             </p>
           </Col>
           <Col md={4} className="myAvtar">
@@ -65,9 +43,11 @@ function Home2() {
         </Row>
         <Row>
           <Col md={12} className="home-about-social">
-            <h1>FIND ME ON</h1>
+            <h1>{t.home.findMeOn}</h1>
             <p>
-              Feel free to <span className="purple">connect </span>with me
+              {t.home.connect.split("connect")[0]}
+              <span className="purple">connect </span>
+              {t.home.connect.split("connect")[1] || "with me"}
             </p>
             <ul className="home-about-social-links">
               <li className="social-icons">

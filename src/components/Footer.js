@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   AiFillGithub,
@@ -6,61 +6,67 @@ import {
   AiFillInstagram,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
+import { SOCIAL_LINKS } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
 
+/**
+ * Footer component with social links and copyright
+ * @component
+ */
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const { t } = useLanguage();
+  const year = useMemo(() => new Date().getFullYear(), []);
+
+  const socialLinks = [
+    {
+      name: "GitHub",
+      url: SOCIAL_LINKS.github || "https://github.com/mgalejandra",
+      icon: AiFillGithub,
+    },
+    {
+      name: "Twitter",
+      url: "https://twitter.com/ale_dev21",
+      icon: AiOutlineTwitter,
+    },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/mgalejandra",
+      icon: FaLinkedinIn,
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/ale_dev21",
+      icon: AiFillInstagram,
+    },
+  ];
+
   return (
-    <Container fluid className="footer">
+    <Container fluid className="footer" role="contentinfo">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Alejandra González</h3>
+              <h3>{t.footer.designedBy}</h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} AG</h3>
+              <h3>{t.footer.copyright} © {year} AG</h3>
         </Col>
         <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
+          <ul className="footer-icons" aria-label="Social media links">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <li key={social.name} className="social-icons">
               <a
-                href="https://github.com/mgalejandra"
+                    href={social.url}
                 style={{ color: "white" }}
                 target="_blank" 
                 rel="noopener noreferrer"
+                    aria-label={`Visit ${social.name} profile`}
               >
-                <AiFillGithub />
+                    <Icon aria-hidden="true" />
               </a>
             </li>
-            <li className="social-icons">
-              <a
-                href="https://twitter.com/ale_dev21"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiOutlineTwitter />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/mgalejandra"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.instagram.com/ale_dev21"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
+              );
+            })}
           </ul>
         </Col>
       </Row>
@@ -68,4 +74,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);

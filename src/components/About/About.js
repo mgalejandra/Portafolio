@@ -6,10 +6,17 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.svg";
 import Toolstack from "./Toolstack";
+import { useLanguage } from "../../context/LanguageContext";
+import SmartImage from "../common/SmartImage";
 
+/**
+ * About component - Information about the developer and skills
+ * @component
+ */
 function About() {
+  const { t } = useLanguage();
   return (
-    <Container fluid className="about-section">
+    <Container fluid className="about-section" aria-label="About section">
       <Particle />
       <Container>
         <Row style={{ justifyContent: "center", padding: "10px" }}>
@@ -22,7 +29,7 @@ function About() {
             }}
           >
             <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
-              Know Who <strong className="purple">I'M</strong>
+              {t.about.topStart} <strong className="purple">{t.about.topStrong}</strong>
             </h1>
             <Aboutcard />
           </Col>
@@ -31,18 +38,24 @@ function About() {
             style={{ paddingTop: "30px", paddingBottom: "50px" }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <SmartImage 
+              src={laptopImg} 
+              alt="About Alejandra González - Developer illustration" 
+              className="img-fluid"
+              width="400"
+              height="400"
+            />
           </Col>
         </Row>
-        <h1 className="project-heading">
-          Professional <strong className="purple">Skillset </strong>
-        </h1>
+            <h1 className="project-heading">
+              {t.about.skillsetHeading} <strong className="purple">{t.about.skillsetStrong}</strong>
+            </h1>
 
         <Techstack />
 
-        <h1 className="project-heading">
-          <strong className="purple">Tools</strong> I use
-        </h1>
+            <h1 className="project-heading">
+              <strong className="purple">{t.about.toolsStart}</strong> {t.about.toolsEnd}
+            </h1>
         <Toolstack />
 
         <Github />
@@ -51,4 +64,4 @@ function About() {
   );
 }
 
-export default About;
+export default React.memo(About);

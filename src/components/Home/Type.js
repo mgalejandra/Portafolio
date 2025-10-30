@@ -1,16 +1,13 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { useLanguage } from "../../context/LanguageContext";
 
 function Type() {
+  const { t } = useLanguage();
   return (
     <Typewriter
       options={{
-        strings: [
-          "Software Developer",
-          "Freelancer",
-          "MERN Stack Developer",
-          "Open Source Contributor",
-        ],
+        strings: t.type,
         autoStart: true,
         loop: true,
         deleteSpeed: 50,

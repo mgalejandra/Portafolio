@@ -1,38 +1,50 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import { ImPointRight } from "react-icons/im";
+import { useLanguage } from "../../context/LanguageContext";
 
+/**
+ * About card component displaying personal information
+ * @component
+ */
 function AboutCard() {
+  const { t } = useLanguage();
   return (
     <Card className="quote-card-view">
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple"> Alejandra González </span>
-            from <span className="purple"> Caracas, Venezuela.</span>
-          
+            {t.aboutCard.p1}
             <br />
-I am currently employed as a Development Coordinator at <a href="https://www.pagochinchin.com/" target="_blank" rel="noreferrer noopener">Chinchin Financial Solutions</a>.
+            {t.aboutCard.jobPrefix}{" "}
+            <a 
+              href="https://www.pagochinchin.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Visit Chinchin Financial Solutions website"
+            >
+              {t.aboutCard.company}
+            </a>.
 <br />
-            I have completed a diploma in development and several courses at Platzi.
+            {t.aboutCard.p2}
             <br />
             <br />
-            Apart from coding, some other activities that I love to do!
+            {t.aboutCard.p3}
           </p>
-          <ul>
+          <ul aria-label="Personal interests">
             <li className="about-activity">
-              <ImPointRight /> Playing Padel
+              <ImPointRight aria-hidden="true" /> {t.aboutCard.like1}
             </li>
             <li className="about-activity">
-              <ImPointRight />  Reading Books
+              <ImPointRight aria-hidden="true" /> {t.aboutCard.like2}
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight aria-hidden="true" /> {t.aboutCard.like3}
             </li>
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "{t.aboutCard.quote}"{" "}
           </p>
           <footer className="blockquote-footer">mgalejandra</footer>
         </blockquote>
@@ -41,4 +53,4 @@ I am currently employed as a Development Coordinator at <a href="https://www.pag
   );
 }
 
-export default AboutCard;
+export default React.memo(AboutCard);

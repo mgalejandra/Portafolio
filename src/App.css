@@ -36,3 +36,122 @@
     transform: rotate(360deg);
   }
 }
+
+/* Loading container for lazy loaded components */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #c770f0, #7c3aed);
+  z-index: 9999;
+  box-shadow: 0 0 10px rgba(199, 112, 240, 0.5);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+/* Language Toggle */
+.lang-toggle {
+  position: fixed;
+  bottom: 95px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
+}
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.25);
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+}
+
+.lang-btn.active {
+  border-color: #c770f0;
+  box-shadow: 0 4px 12px rgba(199, 112, 240, 0.35);
+}
+
+.lang-code {
+  font-size: 0.8rem;
+}
+
+/* Toast Notifications Custom Styles */
+.Toastify__toast {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Dark/Light Theme Variables */
+[data-theme="light"] {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --text-primary: #212529;
+  --text-secondary: #6c757d;
+  --accent-color: #c770f0;
+  --card-bg: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #0c0513;
+  --bg-secondary: #1a1a2e;
+  --text-primary: #ffffff;
+  --text-secondary: #b8b8b8;
+  --accent-color: #c770f0;
+  --card-bg: #1b1a2e;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
