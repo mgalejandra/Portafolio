@@ -43,11 +43,6 @@ const TRANSLATIONS = {
         description: "Payroll migration project from Oracle Forms to Angular version 17 with NG Prime for the frontend. The backend was developed using Java Spring Boot, and PostgreSQL was used as the database. Scrum methodology was implemented with Jira for project planning, and continuous deployment was managed through Jenkins.",
         technologies: ["Angular", "Java Spring Boot", "PostgreSQL", "Jenkins"]
       },
-      huawei: {
-        title: "Oracle Database Analyst",
-        description: "Worked with an outsourcing company for Telefónica Venezuela as an Oracle Database Analyst",
-        technologies: ["Oracle Database", "Database Administration"]
-      },
       amberes: {
         title: "Exchange Venezuela",
         description: "Exchange in Venezuela that allows swapping Bolivars for Bitcoin or Petros. It was developed using React with Bootstrap for the frontend, and Node.js with a database in Redis, Blockchain, and PostgreSQL for the backend. The deployment was done using Docker.",
@@ -154,11 +149,6 @@ const TRANSLATIONS = {
         description: "Proyecto de migración de nómina de Oracle Forms a Angular 17 con NG Prime en el frontend. El backend se desarrolló con Java Spring Boot y PostgreSQL. Se implementó metodología Scrum con Jira y despliegue continuo con Jenkins.",
         technologies: ["Angular", "Java Spring Boot", "PostgreSQL", "Jenkins"]
       },
-      huawei: {
-        title: "Analista Oracle Database",
-        description: "Trabajé con una empresa de outsourcing para Telefónica Venezuela como Analista de Bases de Datos Oracle.",
-        technologies: ["Oracle Database", "Administración de BD"]
-      },
       amberes: {
         title: "Exchange Venezuela",
         description: "Exchange en Venezuela para cambiar Bolívares por Bitcoin o Petros. Desarrollado con React y Bootstrap en el frontend, y Node.js con Redis, Blockchain y PostgreSQL en el backend. Despliegue con Docker.",
@@ -264,11 +254,6 @@ const TRANSLATIONS = {
         title: "Système de paie",
         description: "Migration de la paie d'Oracle Forms vers Angular 17 avec NG Prime. Backend en Java Spring Boot et PostgreSQL. Méthodologie Scrum avec Jira et déploiement continu avec Jenkins.",
         technologies: ["Angular", "Java Spring Boot", "PostgreSQL", "Jenkins"]
-      },
-      huawei: {
-        title: "Analyste Oracle Database",
-        description: "Travail en sous-traitance pour Telefónica Venezuela en tant qu'analyste de bases de données Oracle.",
-        technologies: ["Oracle Database", "Administration BD"]
       },
       amberes: {
         title: "Exchange Venezuela",

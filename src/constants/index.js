@@ -86,14 +86,6 @@ export const PROJECTS = [
     ghLink: null,
   },
   {
-    id: 3,
-    projectKey: "huawei",
-    imgPath: "huawei",
-    demoLink: "https://e.huawei.com/es/",
-    isBlog: false,
-    ghLink: null,
-  },
-  {
     id: 4,
     projectKey: "amberes",
     imgPath: "amberes",

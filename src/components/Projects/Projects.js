@@ -6,7 +6,6 @@ import Particle from "../Particle";
 import { PROJECTS } from "../../constants";
 import { useLanguage } from "../../context/LanguageContext";
 import amacrux from "../../Assets/Projects/amacrux.png";
-import huawei from "../../Assets/Projects/huawei.png";
 import exchange from "../../Assets/Projects/exchange.png";
 import amberes from "../../Assets/Projects/amberes.png";
 import nomina from "../../Assets/Projects/nomina.png";
@@ -21,7 +20,6 @@ import helpdesk from "../../Assets/Projects/helpdesk.png";
 const projectImages = {
   exchange,
   nomina,
-  huawei,
   amberes,
   amacrux,
   pos,
