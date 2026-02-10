@@ -4,8 +4,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import ScrollProgress from "./components/ScrollProgress";
-import ThemeToggle from "./components/ThemeToggle";
-import LanguageToggle from "./components/LanguageToggle";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -50,8 +48,6 @@ function App() {
       <Preloader load={load} />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
             <ScrollProgress />
-            <ThemeToggle />
-            <LanguageToggle />
         <Navbar />
         <ScrollToTop />
             <Suspense fallback={<div className="loading-container">Loading...</div>}>

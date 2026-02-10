@@ -10,6 +10,12 @@ import huawei from "../../Assets/Projects/huawei.png";
 import exchange from "../../Assets/Projects/exchange.png";
 import amberes from "../../Assets/Projects/amberes.png";
 import nomina from "../../Assets/Projects/nomina.png";
+import pos from "../../Assets/Projects/pos.png";
+import hoteles from "../../Assets/Projects/hoteles.png";
+import kloudia from "../../Assets/Projects/kloudia.png";
+import intranet from "../../Assets/Projects/intranet.png";
+import clinicas from "../../Assets/Projects/clinicas.png";
+import helpdesk from "../../Assets/Projects/helpdesk.png";
 
 // Map project image paths
 const projectImages = {
@@ -18,6 +24,12 @@ const projectImages = {
   huawei,
   amberes,
   amacrux,
+  pos,
+  hoteles,
+  kloudia,
+  intranet,
+  clinicas,
+  helpdesk,
 };
 
 /**
@@ -28,11 +40,19 @@ function Projects() {
   const { t } = useLanguage();
 
   const projectList = useMemo(
-    () => PROJECTS.map((project) => ({
-      ...project,
-      imgPath: projectImages[project.imgPath] || projectImages.exchange,
-    })),
-    []
+    () =>
+      PROJECTS.map((project) => {
+        const card = t.projectsCards?.[project.projectKey];
+        const img = projectImages[project.imgPath];
+        return {
+          ...project,
+          imgPath: img || projectImages.exchange,
+          title: card?.title ?? project.projectKey ?? "",
+          description: card?.description ?? "",
+          technologies: card?.technologies ?? [],
+        };
+      }),
+    [t]
   );
 
   const filtered = projectList;
@@ -47,14 +67,14 @@ function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-            <h1 className="project-heading">
+            <h1 id="mis-trabajos-recientes" className="project-heading">
               {t.projects.heading} <strong className="purple">{t.projects.works}</strong>
             </h1>
               <p className="project-subheading">{t.projects.subheading}</p>
         </motion.div>
 
             {/* Filters removed by request */}
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+        <Row style={{ justifyContent: "center", paddingBottom: "10px", alignItems: "stretch" }}>
               {filtered.map((project) => (
             <Col key={project.id} md={4} className="project-card">
               <ProjectCard

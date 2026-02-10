@@ -16,6 +16,8 @@ import {
 
 import { CgFileDocument } from "react-icons/cg";
 import { useLanguage } from "../context/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
+import ThemeToggle from "./ThemeToggle";
 
 /**
  * Navigation bar component with responsive design and scroll effects
@@ -111,9 +113,12 @@ function NavBar() {
                   >
                     <CgFileDocument style={{ marginBottom: "2px" }} /> {t.nav.resume}
               </Nav.Link>
-               </Nav.Item>
-          
-            
+            </Nav.Item>
+
+            <Nav.Item className="navbar-controls">
+              <LanguageToggle />
+              <ThemeToggle />
+            </Nav.Item>
        
             <Nav.Item className="fork-btn">
               <Button
